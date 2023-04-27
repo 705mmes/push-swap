@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 12:26:48 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/04/25 14:42:53 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/04/27 11:59:34 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int	main(int argc, char **argv)
 	else if (checker_ml(argc, argv, &stack_a) == 1)
 		error();
 	sorter(&stack_a, &stack_b);
-	// if ((&stack_a)->nose)
-	// {
-	// 	while ((&stack_a)->nose)
-	// 	{
-	// 		free((&stack_a)->nose);
-	// 		(&stack_a)->nose = (&stack_a)->nose->next;
-	// 	}
-	// }
+	if ((&stack_a)->nose)
+	{
+		while ((&stack_a)->nose)
+		{
+			free((&stack_a)->nose);
+			(&stack_a)->nose = (&stack_a)->nose->next;
+		}
+	}
 	return (0);
 }

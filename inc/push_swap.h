@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:21 by smunio            #+#    #+#             */
-/*   Updated: 2023/04/26 13:57:11 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/04/26 20:44:24 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void		double_free_dif(long long *tab, char **stack);
 
 // -> parsing\init.c
 
+char		*free_item(char **s);
 int			already_sorted(t_list	*stack);
 int			checker(int argc, char **argv, t_list *stack);
 int			checker_ml(int argc, char **argv, t_list *stack);

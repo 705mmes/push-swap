@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:37:16 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/04/26 14:00:43 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/04/27 11:58:37 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,39 +65,29 @@ void	init_check(int argc, char **argv, t_list stack_a)
 
 int	main(int argc, char **argv)
 {
-	(void)argc;
-	(void)argv;
-	// t_list	stack_a;
-	// t_list	stack_b;
+	t_list	stack_a;
+	t_list	stack_b;
 	char	*action;
-	int		fd;
 
-	// init_stack(&stack_a);
-	// init_stack(&stack_b);
-	// init_check(argc, argv, stack_a);
-	// if (argc == 2)
-	// {
-	// 	if (checker(argc, argv, &stack_a) == 1)
-	// 		error();
-	// }
-	// else if (checker_ml(argc, argv, &stack_a) == 1)
-	// 	error();
-	// printf("argc = %d\nargv[1] = %s\n", argc, argv[1]);
-	// print_stacks(&stack_a, &stack_b);
-	fd = open("test.txt", O_RDONLY);
-	action = get_next_line(fd);
-	printf("%s\n", action);
-	// while (action)
-	// {
-	// 	check_output(action, stack_a, stack_b);
-	// 	if (already_sorted(&stack_a) && (&stack_b)->stack_size == 0)
-	// 		break ;
-	// 	action = get_next_line(0);
-	// }
-	// if (already_sorted(&stack_a) && (&stack_b)->stack_size == 0)
-	// 	write(1, "OK\n", 3);
-	// else
-	// 	write(1, "KO\n", 3);
-	// free_stack(stack_a);
+	init_stack(&stack_a);
+	init_stack(&stack_b);
+	if (argc == 2)
+		if (checker(argc, argv, &stack_a) == 1)
+			error();
+	if (argc > 2 && checker_ml(argc, argv, &stack_a) == 1)
+		error();
+	action = get_next_line(0);
+	while (action)
+	{
+		check_output(action, stack_a, stack_b);
+		if (already_sorted(&stack_a) && (&stack_b)->stack_size == 0)
+			break ;
+		action = get_next_line(0);
+	}
+	if (already_sorted(&stack_a) && (&stack_b)->stack_size == 0)
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
+	free_stack(stack_a);
 	return (0);
 }
