@@ -6,11 +6,23 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:45:03 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/04/26 13:55:02 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/04/27 14:33:04 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+
+void	free_stack(t_list *stack)
+{
+	if (stack->nose)
+	{
+		while (stack->nose)
+		{
+			free(stack->nose);
+			stack->nose = stack->nose->next;
+		}
+	}
+}
 
 char	*free_item(char **s)
 {

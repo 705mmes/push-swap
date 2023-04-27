@@ -6,7 +6,7 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 11:45:36 by smunio            #+#    #+#             */
-/*   Updated: 2023/03/21 12:00:52 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/04/27 14:45:46 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ int	ft_check_doublons_ml(int argc, char **argv)
 	int	arg;
 
 	arg = 0;
-	i = -1;
-	u = -1;
+	i = 0;
+	u = 0;
 	while (++i < argc)
 	{
 		arg = ft_atoi(argv[i]);

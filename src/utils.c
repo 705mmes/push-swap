@@ -6,17 +6,21 @@
 /*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:51:58 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/04/21 15:10:26 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/04/27 14:18:25 by sammeuss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	init_stack(t_list *stack)
+t_list	*init_stack(void)
 {
+	t_list	*stack;
+
+	stack = malloc(sizeof(t_list));
 	stack->nose = NULL;
 	stack->tail = NULL;
 	stack->stack_size = 0;
+	return (stack);
 }
 
 void	print_stacks(t_list *stack_a, t_list *stack_b)
