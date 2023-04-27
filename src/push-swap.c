@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push-swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 12:26:48 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/04/27 14:30:22 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:06:45 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ int	main(int argc, char **argv)
 		error();
 	sorter(stack_a, stack_b);
 	free_stack(stack_a);
+	free(stack_a);
+	free(stack_b);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:37:16 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/04/27 14:29:53 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:04:40 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,7 @@ int	main(int argc, char **argv)
 	else
 		write(1, "KO\n", 3);
 	free_stack(stack_a);
+	free(stack_a);
+	free(stack_b);
 	return (0);
 }

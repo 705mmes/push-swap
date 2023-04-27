@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:12:35 by smunio            #+#    #+#             */
-/*   Updated: 2023/04/21 15:18:08 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:23:14 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,14 @@ int	count_args(char **argv)
 
 void	double_free_dif(long long *tab, char **stack)
 {
+	int	i;
+
+	i = 0;
 	free(tab);
+	while (stack[i])
+	{
+		free(stack[i]);
+		i++;
+	}
 	free(stack);
 }

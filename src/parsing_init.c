@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_init.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:45:03 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/04/27 14:33:04 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:12:13 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,14 @@ void	free_stack(t_list *stack)
 	if (stack->nose)
 	{
 		while (stack->nose)
-		{
-			free(stack->nose);
 			stack->nose = stack->nose->next;
+		while (stack->nose)
+		{
+			if (stack->nose->previous)
+				stack->nose = stack->nose->previous;
+			free(stack->nose->next);
 		}
+		free(stack->nose);
 	}
 }
 
