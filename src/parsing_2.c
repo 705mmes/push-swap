@@ -6,7 +6,7 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:12:35 by smunio            #+#    #+#             */
-/*   Updated: 2023/04/27 15:23:14 by smunio           ###   ########.fr       */
+/*   Updated: 2023/05/02 13:59:28 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,17 @@ int	check_int(char **argv)
 	tab = malloc(sizeof(int) * args);
 	if (!tab)
 		return (1);
-	while (++i < args)
+	while (++i <= args - 1)
 		tab[i] = ft_atoi_2(stack[i]);
 	i = -1;
-	while (++i < args)
+	while (++i <= args - 1)
 	{
 		if (tab[i] > 2147483647 || tab[i] < -2147483648)
 		{
 			double_free_dif(tab, stack);
 			return (1);
 		}
+		printf("%d\n", i);
 	}
 	double_free_dif(tab, stack);
 	return (0);
@@ -85,8 +86,7 @@ int	check_int_ml(int argc, char **argv)
 			return (1);
 		}
 	}
-	if (tab)
-		free(tab);
+	free(tab);
 	return (0);
 }
 
@@ -102,14 +102,6 @@ int	count_args(char **argv)
 
 void	double_free_dif(long long *tab, char **stack)
 {
-	int	i;
-
-	i = 0;
+	free_split(stack);
 	free(tab);
-	while (stack[i])
-	{
-		free(stack[i]);
-		i++;
-	}
-	free(stack);
 }

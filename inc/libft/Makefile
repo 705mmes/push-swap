@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+         #
+#    By: smunio <smunio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 18:04:57 by smunio            #+#    #+#              #
-#    Updated: 2023/04/26 13:54:35 by sammeuss         ###   ########.fr        #
+#    Updated: 2023/05/02 14:41:05 by smunio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,7 @@ SRCBONUS = 	ft_lstnew.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
+			ft_lstdellast.c \
 
 OBJECTS = $(SRC:.c=.o)
 OBJECTSBONUS = $(SRCBONUS:.c=.o)

@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push-swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstdellast.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/19 12:26:48 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/05/02 14:44:30 by smunio           ###   ########.fr       */
+/*   Created: 2023/05/02 14:39:16 by smunio            #+#    #+#             */
+/*   Updated: 2023/05/02 14:40:34 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_lstdellast(t_stack *lst)
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
-
-	stack_a = init_stack();
-	stack_b = init_stack();
-	if (argc == 2)
+	while (lst->next)
+		lst = lst->next;
+	if (lst->previous)
+		lst->previous->next = 0;
+	if (lst)
 	{
-		if (checker(argc, argv, stack_a) == 1)
-			error();
+		lst->next = 0;
+		free(lst);
 	}
-	else if (checker_ml(argc, argv, stack_a) == 1)
-		error();
-	sorter(stack_a, stack_b);
-	free_stacks(stack_a, stack_b);
-	return (0);
 }

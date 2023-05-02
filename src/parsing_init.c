@@ -6,36 +6,33 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:45:03 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/04/27 15:12:13 by smunio           ###   ########.fr       */
+/*   Updated: 2023/05/02 14:45:42 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	free_stack(t_list *stack)
+void	free_stacks(t_list *stack_a, t_list *stack_b)
 {
-	if (stack->nose)
-	{
-		while (stack->nose)
-			stack->nose = stack->nose->next;
-		while (stack->nose)
-		{
-			if (stack->nose->previous)
-				stack->nose = stack->nose->previous;
-			free(stack->nose->next);
-		}
-		free(stack->nose);
-	}
+	while (stack_a->nose->next)
+		ft_lstdellast(stack_a->nose);
+	free(stack_a->nose);
+	free(stack_a);
+	free(stack_b);
+	stack_a->nose = NULL;
 }
 
-char	*free_item(char **s)
+char	*free_split(char **split)
 {
-	if (*s)
+	int	i;
+
+	i = 0;
+	while (split[i])
 	{
-		free(*s);
-		*s = 0;
-		return (*s);
+		free(split[i]);
+		i++;
 	}
+	free(split);
 	return (NULL);
 }
 
@@ -79,6 +76,7 @@ int	checker(int argc, char **argv, t_list *stack)
 		i++;
 	}
 	ranking(stack);
+	free_split(lst);
 	return (0);
 }
 

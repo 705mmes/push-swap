@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 11:45:36 by smunio            #+#    #+#             */
-/*   Updated: 2023/04/27 14:45:46 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/05/02 13:02:12 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	ft_check_doublons(char **argv)
 		{
 			if (i != u && ft_atoi(tab[i]) == ft_atoi(tab[u]))
 			{
-				free_item(tab);
+				free_split(tab);
 				return (1);
 			}
 			u++;
@@ -94,7 +94,7 @@ int	ft_check_doublons(char **argv)
 		u = 0;
 		i++;
 	}
-	free_item(tab);
+	free_split(tab);
 	return (0);
 }
 

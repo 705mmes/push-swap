@@ -6,7 +6,7 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:37:16 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/04/27 15:04:40 by smunio           ###   ########.fr       */
+/*   Updated: 2023/05/02 14:45:11 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,6 @@ int	main(int argc, char **argv)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
-	free_stack(stack_a);
-	free(stack_a);
-	free(stack_b);
+	free_stacks(stack_a, stack_b);
 	return (0);
 }

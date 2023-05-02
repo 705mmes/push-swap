@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:16:48 by smunio            #+#    #+#             */
-/*   Updated: 2023/04/26 12:37:34 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/05/02 14:40:52 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ void	ft_lstdelone(t_stack *lst, void (*del)(int));
 void	ft_lstclear(t_stack **lst, void (*del)(int));
 void	ft_lstiter(t_stack *lst, void (*f)(int));
 t_stack	*ft_lstmap(t_stack *lst, void *(*f)(int), void (*del)(int));
+void	ft_lstdellast(t_stack *lst);
 
 /*
 *		-------

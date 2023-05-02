@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:21 by smunio            #+#    #+#             */
-/*   Updated: 2023/04/27 14:24:14 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/05/02 14:45:47 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct s_list
 
 void		check_output(char *line, t_list stack_a, t_list stack_b);
 void		init_check(int argc, char **argv, t_list stack_a);
-void		free_stack(t_list *stack);
+void		free_stacks(t_list *stack_a, t_list *stack_b);
 
 //-------------
 /*
@@ -66,7 +66,7 @@ void		double_free_dif(long long *tab, char **stack);
 
 // -> parsing\init.c
 
-char		*free_item(char **s);
+char		*free_split(char **s);
 int			already_sorted(t_list	*stack);
 int			checker(int argc, char **argv, t_list *stack);
 int			checker_ml(int argc, char **argv, t_list *stack);
