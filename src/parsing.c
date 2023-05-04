@@ -6,7 +6,7 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 11:45:36 by smunio            #+#    #+#             */
-/*   Updated: 2023/05/02 13:02:12 by smunio           ###   ########.fr       */
+/*   Updated: 2023/05/04 13:13:57 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	ft_check_doublons_ml(int argc, char **argv)
 		while (++u < argc)
 			if (i != u && arg == ft_atoi(argv[u]))
 				return (1);
-		u = -1;
+		u = 0;
 	}
 	return (0);
 }
