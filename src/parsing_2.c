@@ -6,7 +6,7 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:12:35 by smunio            #+#    #+#             */
-/*   Updated: 2023/05/02 13:59:28 by smunio           ###   ########.fr       */
+/*   Updated: 2023/05/04 12:21:57 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	check_int(char **argv)
 			double_free_dif(tab, stack);
 			return (1);
 		}
-		printf("%d\n", i);
 	}
 	double_free_dif(tab, stack);
 	return (0);

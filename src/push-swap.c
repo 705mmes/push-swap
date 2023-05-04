@@ -6,7 +6,7 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 12:26:48 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/05/02 14:44:30 by smunio           ###   ########.fr       */
+/*   Updated: 2023/05/04 10:55:00 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	t_list	*stack_b;
 
+	if (argc < 2)
+		return (0);
 	stack_a = init_stack();
 	stack_b = init_stack();
 	if (argc == 2)

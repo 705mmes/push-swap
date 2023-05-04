@@ -6,36 +6,36 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:37:16 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/05/02 14:45:11 by smunio           ###   ########.fr       */
+/*   Updated: 2023/05/04 12:18:33 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-void	check_output(char *action, t_list stack_a, t_list stack_b)
+void	check_output(char *action, t_list *stack_a, t_list *stack_b)
 {
 	if (!ft_strncmp(action, "sa\n", ft_strlen(action)))
-		swap(&stack_a, 0, 1);
+		swap(stack_a, 0, 1);
 	else if (!ft_strncmp(action, "sb\n", ft_strlen(action)))
-		swap(&stack_b, 1, 1);
+		swap(stack_b, 1, 1);
 	else if (!ft_strncmp(action, "ss\n", ft_strlen(action)))
-		ss(&stack_a, &stack_b, 1);
+		ss(stack_a, stack_b, 1);
 	else if (!ft_strncmp(action, "pa\n", ft_strlen(action)))
-		push_a(&stack_a, &stack_b, 1);
+		push_a(stack_a, stack_b, 1);
 	else if (!ft_strncmp(action, "pb\n", ft_strlen(action)))
-		push_b(&stack_a, &stack_b, 1);
+		push_b(stack_a, stack_b, 1);
 	else if (!ft_strncmp(action, "ra\n", ft_strlen(action)))
-		rotate(&stack_a, 0, 1);
+		rotate(stack_a, 0, 1);
 	else if (!ft_strncmp(action, "rb\n", ft_strlen(action)))
-		rotate(&stack_b, 1, 1);
+		rotate(stack_b, 1, 1);
 	else if (!ft_strncmp(action, "rr\n", ft_strlen(action)))
-		rr(&stack_a, &stack_b, 1);
+		rr(stack_a, stack_b, 1);
 	else if (!ft_strncmp(action, "rra\n", ft_strlen(action)))
-		reverse_rotate_a(&stack_a, 1);
+		reverse_rotate_a(stack_a, 1);
 	else if (!ft_strncmp(action, "rrb\n", ft_strlen(action)))
-		reverse_rotate_b(&stack_b, 1);
+		reverse_rotate_b(stack_b, 1);
 	else if (!ft_strncmp(action, "rrr\n", ft_strlen(action)))
-		rrr(&stack_b, &stack_a, 1);
+		rrr(stack_b, stack_a, 1);
 	else
 		(write(2, "Error\n", 6), exit(1));
 }
@@ -51,6 +51,22 @@ void	init_check(int argc, char **argv, t_list stack_a)
 		error();
 }
 
+int	checker_checker(int argc, char **argv, t_list *stack_a)
+{
+	if (argc == 2)
+		if (checker(argc, argv, stack_a) == 1)
+			error();
+	if (argc > 2 && checker_ml(argc, argv, stack_a) == 1)
+		error();
+	if (already_sorted(stack_a))
+	{
+		write(1, "OK\n", 3);
+		return (0);
+	}
+	else
+		return (1);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
@@ -59,15 +75,12 @@ int	main(int argc, char **argv)
 
 	stack_a = init_stack();
 	stack_b = init_stack();
-	if (argc == 2)
-		if (checker(argc, argv, stack_a) == 1)
-			error();
-	if (argc > 2 && checker_ml(argc, argv, stack_a) == 1)
-		error();
+	if (checker_checker(argc, argv, stack_a) == 0)
+		return (0);
 	action = get_next_line(0);
 	while (action)
 	{
-		check_output(action, *stack_a, *stack_b);
+		check_output(action, stack_a, stack_b);
 		if (already_sorted(stack_a) && stack_b->stack_size == 0)
 			break ;
 		action = get_next_line(0);

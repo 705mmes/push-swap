@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 11:57:48 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/04/21 14:50:35 by sammeuss         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:06:06 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	swap(t_list *stack_ref, int choice, int print)
 	}
 }
 
-void	push_b(t_list	*stack_ref_a, t_list *stack_ref_b, int print)
+void	push_b(t_list *stack_ref_a, t_list *stack_ref_b, int print)
 {
 	t_stack	*tmp;
 
@@ -58,7 +58,7 @@ void	push_b(t_list	*stack_ref_a, t_list *stack_ref_b, int print)
 	}
 }
 
-void	push_a(t_list	*stack_ref_a, t_list *stack_ref_b, int print)
+void	push_a(t_list *stack_ref_a, t_list *stack_ref_b, int print)
 {
 	t_stack	*tmp;
 

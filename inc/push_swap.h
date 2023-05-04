@@ -6,7 +6,7 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:21 by smunio            #+#    #+#             */
-/*   Updated: 2023/05/02 14:45:47 by smunio           ###   ########.fr       */
+/*   Updated: 2023/05/04 12:14:56 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ typedef struct s_list
 
 //	->checker
 
-void		check_output(char *line, t_list stack_a, t_list stack_b);
+void		check_output(char *action, t_list *stack_a, t_list *stack_b);
+int			checker_checker(int argc, char **argv, t_list *stack_a);
 void		init_check(int argc, char **argv, t_list stack_a);
 void		free_stacks(t_list *stack_a, t_list *stack_b);
 
