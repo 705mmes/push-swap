@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sammeuss <sammeuss@student.42.fr>          +#+  +:+       +#+         #
+#    By: smunio <smunio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 18:04:57 by smunio            #+#    #+#              #
-#    Updated: 2023/04/27 14:39:44 by sammeuss         ###   ########.fr        #
+#    Updated: 2023/05/04 13:19:42 by smunio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,7 @@ $(NAME): $(OBJS)
 		@make -C inc/libft bonus
 		@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT_DIR)libft.a
 		@echo "$(PRINT_PREFIX)\033[0;38;5;226m Done \033[0m\n"
+		@echo "\033[0;38;5;226m -> make bonus : checker \033[0m\n"
 
 bonus: $(OBJSBONUS)
 		@make -C inc/libft

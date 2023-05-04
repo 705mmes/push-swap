@@ -6,7 +6,7 @@
 /*   By: smunio <smunio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:37:16 by sammeuss          #+#    #+#             */
-/*   Updated: 2023/05/04 12:18:33 by smunio           ###   ########.fr       */
+/*   Updated: 2023/05/04 13:22:05 by smunio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	init_check(int argc, char **argv, t_list stack_a)
 
 int	checker_checker(int argc, char **argv, t_list *stack_a)
 {
+	if (argc < 2)
+		return (0);
 	if (argc == 2)
 		if (checker(argc, argv, stack_a) == 1)
 			error();
